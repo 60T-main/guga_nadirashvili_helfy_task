@@ -19,7 +19,12 @@ Task model:
 
 ```js
 {
-  (id, title, description, completed, createdAt, priority);
+  id: number,
+  title: string,
+  description: string,
+  completed: boolean,
+  createdAt: Date,
+  priority: "low" | "medium" | "high"
 }
 ```
 
@@ -45,4 +50,3 @@ Endpoints:
 - Styling: ~30 min
 - Backend: ~100 min
 - README: ~15 min
-- Total: ~180 min

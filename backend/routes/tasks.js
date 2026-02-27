@@ -139,7 +139,9 @@ router.route('/:id')
             element = taskMap.get(Number(id));
 
             if (!element) {
-                throw new Error('Entry not found', { status: 404 });
+                const error = new Error('Entry not found');
+                error.status = 404;
+                throw error;
             }
 
             for (const [key, value] of Object.entries(req.body)) {
@@ -183,7 +185,9 @@ router.route('/:id')
             const elementIndex = taskMap.get(Number(id));
 
             if (elementIndex === undefined) {
-                throw new Error('Entry not found', { status: 404 });
+                const error = new Error('Entry not found');
+                error.status = 404;
+                throw error;
             }
 
             deletedElement = data.splice(elementIndex, 1)[0];
